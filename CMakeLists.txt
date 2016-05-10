@@ -7,6 +7,10 @@ if(WIN32)
    target_compile_definitions(triangle PRIVATE -DNO_TIMER)
 endif()
 
+if(UNIX)
+    target_compile_options(triangle PRIVATE -fPIC)
+endif(UNIX)
+
 INSTALL(TARGETS triangle
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
