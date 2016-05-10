@@ -6,3 +6,9 @@ target_compile_definitions(triangle PRIVATE -DTRILIBRARY -DANSI_DECLARATORS)
 if(WIN32)
    target_compile_definitions(triangle PRIVATE -DNO_TIMER)
 endif()
+
+INSTALL(TARGETS triangle
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    )
+INSTALL(FILES triangle.h DESTINATION include)
