@@ -8,7 +8,7 @@ if(WIN32)
 endif()
 
 if(UNIX)
-    target_compile_options(triangle PRIVATE -fPIC)
+    target_compile_options(triangle PRIVATE -fPIC -fvisibility=hidden)
 endif(UNIX)
 
 INSTALL(TARGETS triangle
