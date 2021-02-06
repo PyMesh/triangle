@@ -7,12 +7,5 @@ if(WIN32)
    target_compile_definitions(triangle PRIVATE -DNO_TIMER)
 endif()
 
-if(UNIX)
-    target_compile_options(triangle PRIVATE -fPIC -fvisibility=hidden)
-endif(UNIX)
-
-INSTALL(TARGETS triangle
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    )
-INSTALL(FILES triangle.h DESTINATION include)
+# Generate position independent code
+set_target_properties(triangle PROPERTIES POSITION_INDEPENDENT_CODE ON)
